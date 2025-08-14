@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>API Data Leak</title>
+    <style>
+        body { background-color: #1a1a1a; color: #f0f0f0; font-family: monospace; padding: 20px; }
+        pre { white-space: pre-wrap; word-wrap: break-word; }
+    </style>
+</head>
+<body>
+<pre>
+{
+  "status": "200_OK",
+  "data_leak": {
+    "source": "database_backup__do_not_expose",
+    "users": [
+      {
+        "id": "101",
+        "username": "admin",
+        "password_hash": "dummy_hash_for_admin123",
+        "password_plain": "admin@123"
+      },
+      {
+        "id": "102",
+        "username": "j.smith",
+        "password_hash": "dummy_hash_for_smith456",
+        "password_plain": "Password123!"
+      },
+      {
+        "id": "103",
+        "username": "test_user",
+        "password_hash": "dummy_hash_for_test_user",
+        "password_plain": "password"
+      }
+    ]
+  }
+}
+</pre>
+</body>
+</html>
